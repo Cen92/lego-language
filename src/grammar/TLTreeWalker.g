@@ -107,13 +107,14 @@ expression returns [TLNode node]
   |  ^('!=' expression expression)
   |  ^('>=' expression expression)
   |  ^('<=' expression expression)
-  |  ^('>' expression expression)
+  |  ^('>' a=expression b=expression) {node = new GTNode($a.node, $b.node);}
   |  ^('<' a=expression b=expression) {node = new LTNode($a.node, $b.node);}
   |  ^('+' a=expression b=expression) {node = new AddNode($a.node, $b.node);}
-  |  ^('-' expression expression)
-  |  ^('*' expression expression)
-  |  ^('/' expression expression)
-  |  ^('%' expression expression)
+  |  ^('-' a=expression b=expression) {node = new SubtractNode($a.node, $b.node);}
+  |  ^('*' a=expression b=expression) {node = new MultNode($a.node, $b.node);}
+  |  ^('/' a=expression b=expression) {node = new DivideNode($a.node, $b.node);}
+  |  ^('%' a=expression b=expression) {node = new ModNode($a.node, $b.node);}
+
   |  ^('^' expression expression)
   |  ^(UNARY_MIN expression)
   |  ^(NEGATE expression)

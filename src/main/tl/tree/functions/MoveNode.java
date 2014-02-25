@@ -20,7 +20,10 @@ public class MoveNode implements TLNode {
 
   @Override
   public TLValue evaluate() {
-    TLValue value = expression.evaluate();
+    String a;
+    a = "Move";
+    TLValue value = a;//expression.evaluate();
+    //value = 
     out.println(value);
     return TLValue.VOID;
   }

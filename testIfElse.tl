@@ -1,6 +1,6 @@
 a = 5;  
   
-if a < 4 do  
+if a > 4 do  
   a = 1;  
 else if a < 0 do   
   a = 2;  

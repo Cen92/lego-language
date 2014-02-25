@@ -1,6 +1,7 @@
 package tl;
 
 import java.util.List;
+import java.util.Arrays;
 
 public class TLValue implements Comparable<TLValue> {
 
@@ -41,6 +42,12 @@ public class TLValue implements Comparable<TLValue> {
   public List<TLValue> asList() {
     return (List<TLValue>)value;
   }
+  
+  // @SuppressWarnings("unchecked")
+  // public List<TLValue> asArray() {
+  //   return (Arrays<TLValue>)value;
+  // }
+
 
   public String asString() {
     return (String)value;
