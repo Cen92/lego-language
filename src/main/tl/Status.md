@@ -1,1 +1,4 @@
-Broken: Working on Move function fix
+if WORKING
+else WORKING
++ - / * % Broken
+moveNode Broken
