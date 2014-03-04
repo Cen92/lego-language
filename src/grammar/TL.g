@@ -80,7 +80,14 @@ functionCall
   |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
-  |  Move '(' expression ')'      -> ^(FUNC_CALL Move expression)  
+  |  MoveForward '(' expression? ')'     -> ^(FUNC_CALL MoveForward expression?) 
+  |  MoveBackward '(' expression? ')'     -> ^(FUNC_CALL MoveBackward expression?) 
+  |  TurnLeft '(' expression? ')'     -> ^(FUNC_CALL TurnLeft expression?) 
+  |  TurnRight '(' expression? ')'     -> ^(FUNC_CALL TurnRight expression?) 
+  |  Shoot '(' expression? ')'     -> ^(FUNC_CALL Shoot expression?) 
+
+
+
   ;
 
 ifStatement
@@ -189,7 +196,11 @@ indexes
   :  ('[' expression ']')+ -> ^(INDEXES expression+)
   ;
 
-Move     : 'move';
+MoveForward     : 'moveForward';
+MoveBackward     : 'moveBackward';
+TurnLeft     : 'turnLeft';
+TurnRight     : 'turnRight';
+Shoot    :  'shoot';
 Println  : 'println';
 Print    : 'print';
 Assert   : 'assert';

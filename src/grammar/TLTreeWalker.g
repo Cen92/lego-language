@@ -68,7 +68,12 @@ functionCall returns [TLNode node]
   |  ^(FUNC_CALL Print expression)
   |  ^(FUNC_CALL Assert expression)
   |  ^(FUNC_CALL Size expression)
-  |  ^(FUNC_CALL Move expression)
+  |  ^(FUNC_CALL MoveForward expression?) {node = new MoveForwardNode($expression.node);}
+  |  ^(FUNC_CALL MoveBackward expression?) {node = new MoveBackwardNode($expression.node);}
+  |  ^(FUNC_CALL TurnLeft expression?) {node = new TurnLeftNode($expression.node);}
+  |  ^(FUNC_CALL TurnRight expression?) {node = new TurnRightNode($expression.node);}
+  |  ^(FUNC_CALL Shoot expression?) {node = new ShootNode($expression.node);}
+
   ;
 
 ifStatement returns [TLNode node]
